@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Access Denied";
+}
+<h1>Access Denied</h1>
+
+<p> YOU do not have permission to acces this page.</p>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <a asp-controller ="Home" asp-action="Index" class="btn btn-primary">Return to Home</a>
+}
+else
+{
+        <a asp-controller="Account" asp-action="Login" class="btn btn-primary">Login</a>
+}
+
